@@ -1,0 +1,60 @@
+{{- if eq .chezmoi.os "darwin" -}}
+#!/bin/bash
+
+brew bundle --no-lock --file=/dev/stdin <<EOF
+
+# Dev tools
+brew "git"
+brew "nvm"
+cask "orbstack"
+brew "ddev/ddev/ddev"
+
+
+# Shell
+cask "wezterm"
+cask "font-jetbrains-mono-nerd-font"
+brew "jandedobbeleer/oh-my-posh/oh-my-posh"
+brew "fzf"
+brew "zoxide"
+
+# Apps
+cask "1password"
+cask "alfred"
+cask "brave-browser"
+cask "cleanmymac"
+cask "cloudflare-warp"
+cask "discord"
+cask "firefox"
+cask "keeper-password-manager"
+cask "loom"
+cask "nordvpn"
+cask "obsidian"
+cask "postman"
+cask "sequel-ace"
+cask "slack"
+cask "spectacle"
+cask "visual-studio-code"
+cask "whatsapp"
+cask "zoom"
+
+vscode "bradlc.vscode-tailwindcss"
+vscode "dbaeumer.vscode-eslint"
+vscode "denoland.vscode-deno"
+vscode "eamodio.gitlens"
+vscode "esbenp.prettier-vscode"
+vscode "graphql.vscode-graphql"
+vscode "graphql.vscode-graphql-syntax"
+vscode "hollowtree.vue-snippets"
+vscode "mblode.twig-language-2"
+vscode "ms-vscode.sublime-keybindings"
+vscode "pkief.material-icon-theme"
+vscode "putyourlightson.vscode-sprig-support"
+vscode "tamasfe.even-better-toml"
+vscode "trapfether.tailwind-raw-reorder"
+vscode "usernamehw.errorlens"
+vscode "vue.volar"
+vscode "wesbos.theme-cobalt2"
+
+
+EOF
+{{ end -}}

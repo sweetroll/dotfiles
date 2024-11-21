@@ -1,0 +1,63 @@
+{
+  "workbench.colorTheme": "Cobalt2",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.startupEditor": "none",
+  "workbench.tree.indent": 15,
+  "workbench.activityBar.location": "top",
+  "workbench.colorCustomizations": {
+    "editor.background": "#0e3d60",
+    "editorGutter.background": "#0e3d60" // your color here
+  },
+  "editor.quickSuggestions": {
+    "strings": "on"
+  },
+
+
+  "editor.cursorStyle": "line",
+  "editor.cursorWidth": 2,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.fontFamily": "'Operator Mono Lig', 'Operator Mono', monospace",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 16,
+  "editor.fontWeight": "400",
+  "editor.formatOnSave": true,
+  // "editor.lineHeight": 30,
+  "editor.minimap.enabled": false,
+
+  "files.trimTrailingWhitespace": true,
+  "tailwindCSS.includeLanguages": {
+    "twig": "html",
+    "vue-html": "html"
+  },
+
+  "terminal.integrated.fontSize": 16,
+  "terminal.integrated.fontWeight": "400",
+  "terminal.integrated.fontWeightBold": "500",
+  "terminal.integrated.fontFamily": "'FiraCode Nerd Font'",
+  "explorer.confirmDelete": false,
+
+  "css.validate": false,
+  "eslint.debug": false,
+  "prettier.requireConfig": true,
+  "prettier.documentSelectors": [
+    "**/*.astro"
+  ],
+  "explorer.confirmDragAndDrop": false,
+  "tailwindCSS.emmetCompletions": true,
+  "js/ts.implicitProjectConfig.target": "ESNext",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "update.showReleaseNotes": false,
+  "diffEditor.renderSideBySide": false,
+  "gitlens.codeLens.enabled": false,
+  "javascript.updateImportsOnFileMove.enabled": "never",
+  "files.associations": {
+    "*.html": "twig",
+    "*.css": "tailwindcss"
+  },
+  "emmet.includeLanguages": {
+      "twig": "html"
+  },
+  "search.followSymlinks": false,
+  "security.workspace.trust.untrustedFiles": "open",
+}
