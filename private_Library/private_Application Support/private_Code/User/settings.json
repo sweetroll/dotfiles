@@ -6,12 +6,12 @@
   "workbench.activityBar.location": "top",
   "workbench.colorCustomizations": {
     "editor.background": "#0e3d60",
-    "editorGutter.background": "#0e3d60" // your color here
+    "editorGutter.background": "#0e3d60"
   },
+
   "editor.quickSuggestions": {
     "strings": "on"
   },
-
 
   "editor.cursorStyle": "line",
   "editor.cursorWidth": 2,
@@ -21,7 +21,6 @@
   "editor.fontSize": 16,
   "editor.fontWeight": "400",
   "editor.formatOnSave": true,
-  // "editor.lineHeight": 30,
   "editor.minimap.enabled": false,
 
   "files.trimTrailingWhitespace": true,
@@ -34,14 +33,13 @@
   "terminal.integrated.fontWeight": "400",
   "terminal.integrated.fontWeightBold": "500",
   "terminal.integrated.fontFamily": "'FiraCode Nerd Font'",
+  "terminal.integrated.inheritEnv": true,
+  "terminal.integrated.defaultProfile.osx": "zsh",
   "explorer.confirmDelete": false,
 
   "css.validate": false,
   "eslint.debug": false,
   "prettier.requireConfig": true,
-  "prettier.documentSelectors": [
-    "**/*.astro"
-  ],
   "explorer.confirmDragAndDrop": false,
   "tailwindCSS.emmetCompletions": true,
   "js/ts.implicitProjectConfig.target": "ESNext",
@@ -56,8 +54,19 @@
     "*.css": "tailwindcss"
   },
   "emmet.includeLanguages": {
-      "twig": "html"
+    "twig": "html"
   },
   "search.followSymlinks": false,
   "security.workspace.trust.untrustedFiles": "open",
+  "tailwindCSS.files.exclude": [
+    "**/.git/**",
+    "**/node_modules/**",
+    "**/vendor/**"
+  ],
+  "workbench.editorAssociations": {
+    "*.svg": "default"
+  },
+  "editor.inlineSuggest.suppressSuggestions": true,
+  "roo-cline.allowedCommands": ["npm install", "npx jest", "git", "npm run"]
+  // "tailwind-raw-reorder.IgnoreConfigNotFound": true,
 }
