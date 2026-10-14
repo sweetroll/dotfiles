@@ -1,0 +1,6 @@
+
+# Vite+ bin (https://viteplus.dev)
+[ -f "$HOME/.vite-plus/env" ] && . "$HOME/.vite-plus/env"
+
+# Local secrets (not in chezmoi)
+[ -f "$HOME/.config/secrets.zsh" ] && . "$HOME/.config/secrets.zsh"

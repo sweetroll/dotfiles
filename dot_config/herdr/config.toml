@@ -1,0 +1,23 @@
+onboarding = false
+
+[ui.toast]
+delivery = "terminal"
+
+[keys]
+goto = []
+new_worktree = []
+
+[[keys.command]]
+key = "prefix+f"
+type = "shell"
+command = "herdr plugin action invoke open-sidebar --plugin herdr-sidebar"
+
+[[keys.command]]
+key = "prefix+g"
+type = "plugin_action"
+command = "herdr-lazygit.open"
+
+[[keys.command]]
+key = "prefix+shift+g"
+type = "plugin_action"
+command = "herdr-lazygit.open-tab"
