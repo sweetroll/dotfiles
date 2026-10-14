@@ -1,72 +1,55 @@
 {
-  "workbench.colorTheme": "Cobalt2",
-  "workbench.iconTheme": "material-icon-theme",
   "workbench.startupEditor": "none",
-  "workbench.tree.indent": 15,
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.fontSize": 17,
+  "editor.formatOnSave": true,
+  "editor.fontFamily": "'Operator Mono Lig', 'Operator Mono', monospace",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.fontLigatures": true,
+  "editor.minimap.enabled": false,
+  "workbench.colorTheme": "Cobalt2",
   "workbench.activityBar.location": "top",
+  "workbench.tree.indent": 15,
   "workbench.colorCustomizations": {
     "editor.background": "#0e3d60",
     "editorGutter.background": "#0e3d60"
   },
-
-  "editor.quickSuggestions": {
-    "strings": "on"
-  },
-
-  "editor.cursorStyle": "line",
   "editor.cursorWidth": 2,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.fontFamily": "'Operator Mono Lig', 'Operator Mono', monospace",
-  "editor.fontLigatures": true,
-  "editor.fontSize": 16,
-  "editor.fontWeight": "400",
-  "editor.formatOnSave": true,
-  "editor.minimap.enabled": false,
-
-  "files.trimTrailingWhitespace": true,
-  "tailwindCSS.includeLanguages": {
-    "twig": "html",
-    "vue-html": "html"
-  },
 
   "terminal.integrated.fontSize": 16,
-  "terminal.integrated.fontWeight": "400",
-  "terminal.integrated.fontWeightBold": "500",
-  "terminal.integrated.fontFamily": "'FiraCode Nerd Font'",
-  "terminal.integrated.inheritEnv": true,
-  "terminal.integrated.defaultProfile.osx": "zsh",
-  "explorer.confirmDelete": false,
-
-  "css.validate": false,
-  "eslint.debug": false,
-  "prettier.requireConfig": true,
-  "explorer.confirmDragAndDrop": false,
-  "tailwindCSS.emmetCompletions": true,
-  "js/ts.implicitProjectConfig.target": "ESNext",
-  "typescript.enablePromptUseWorkspaceTsdk": true,
-  "diffEditor.ignoreTrimWhitespace": false,
-  "update.showReleaseNotes": false,
   "diffEditor.renderSideBySide": false,
-  "gitlens.codeLens.enabled": false,
-  "javascript.updateImportsOnFileMove.enabled": "never",
+  "prettier.requireConfig": true,
+
   "files.associations": {
-    "*.html": "twig",
-    "*.css": "tailwindcss"
+    "*.html": "twig"
   },
   "emmet.includeLanguages": {
-    "twig": "html"
+      "twig": "html"
   },
-  "search.followSymlinks": false,
-  "security.workspace.trust.untrustedFiles": "open",
-  "tailwindCSS.files.exclude": [
-    "**/.git/**",
-    "**/node_modules/**",
-    "**/vendor/**"
-  ],
+  "explorer.confirmDelete": false,
+  "css.validate": false,
+  "workbench.editor.enablePreview": false,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "workbench.editor.showTabs": "none",
+  "tailwindCSS.emmetCompletions": true,
   "workbench.editorAssociations": {
     "*.svg": "default"
   },
-  "editor.inlineSuggest.suppressSuggestions": true,
-  "roo-cline.allowedCommands": ["npm install", "npx jest", "git", "npm run"]
-  // "tailwind-raw-reorder.IgnoreConfigNotFound": true,
+  "tailwindCSS.files.exclude": [
+    "**/.git/**",
+    "**/node_modules/**",
+    "**/.hg/**",
+    "**/.svn/**",
+    "**/vendor/**"
+  ],
+  "workbench.secondarySideBar.defaultVisibility": "hidden",
+  "github.copilot.enable": {
+    "*": false
+  },
+  "git.branchProtectionPrompt": "alwaysCommit",
+  "claudeCode.preferredLocation": "panel",
+  "update.showReleaseNotes": false,
+  "editor.accessibilitySupport": "off",
+  "chat.viewSessions.orientation": "stacked",
+  "chat.titleBar.openInAgentsWindow.enabled": false
 }

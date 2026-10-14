@@ -3,5 +3,13 @@
     {
         "key": "alt+cmd+i",
         "command": "workbench.panel.chat.view.copilot.focus"
+    },
+    {
+        "key": "shift+enter",
+        "command": "workbench.action.terminal.sendSequence",
+        "args": {
+            "text": "\\\r\n"
+        },
+        "when": "terminalFocus"
     }
 ]

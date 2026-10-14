@@ -3,7 +3,7 @@ local wezterm = require('wezterm')
 local config = wezterm.config_builder()
 
 config.font = wezterm.font("JetBrainsMono NF")
-config.font_size = 19
+config.font_size = 17
 config.color_scheme = 'Tomorrow (dark) (terminal.sexy)'
 config.initial_cols = 100
 config.initial_rows = 30
