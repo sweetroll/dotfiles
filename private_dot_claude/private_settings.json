@@ -1,0 +1,188 @@
+{
+  "env": {
+    "CLAUDE_CODE_ENABLE_TODO_TOOLS": "1",
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+  },
+  "includeCoAuthoredBy": false,
+  "model": "opus",
+  "skillOverrides": {
+    "frontend-review": "off",
+    "gitbutler": "off",
+    "pm-brief": "off",
+    "retro": "off",
+    "schema-audit": "off"
+  },
+  "deniedMcpServers": [
+    {
+      "serverName": "claude.ai AWS Marketplace"
+    },
+    {
+      "serverName": "claude.ai Ahrefs"
+    },
+    {
+      "serverName": "claude.ai Apollo.io"
+    },
+    {
+      "serverName": "claude.ai Bitly"
+    },
+    {
+      "serverName": "claude.ai Brandfetch"
+    },
+    {
+      "serverName": "claude.ai Canva"
+    },
+    {
+      "serverName": "claude.ai Cloudflare"
+    },
+    {
+      "serverName": "claude.ai Cloudflare Developer Platform"
+    },
+    {
+      "serverName": "claude.ai Docusign"
+    },
+    {
+      "serverName": "claude.ai ElevenLabs"
+    },
+    {
+      "serverName": "claude.ai Elevenlabs"
+    },
+    {
+      "serverName": "claude.ai Exa"
+    },
+    {
+      "serverName": "claude.ai Firecrawl"
+    },
+    {
+      "serverName": "claude.ai Gmail"
+    },
+    {
+      "serverName": "claude.ai GoDaddy"
+    },
+    {
+      "serverName": "claude.ai Google Calendar"
+    },
+    {
+      "serverName": "claude.ai Google Cloud BigQuery"
+    },
+    {
+      "serverName": "claude.ai Google Drive"
+    },
+    {
+      "serverName": "claude.ai Granola"
+    },
+    {
+      "serverName": "claude.ai HostedScan"
+    },
+    {
+      "serverName": "claude.ai HubSpot"
+    },
+    {
+      "serverName": "claude.ai Hubspot"
+    },
+    {
+      "serverName": "claude.ai Interactive Brokers (IBKR)"
+    },
+    {
+      "serverName": "claude.ai MT Newswires"
+    },
+    {
+      "serverName": "claude.ai Miro"
+    },
+    {
+      "serverName": "claude.ai Notion"
+    },
+    {
+      "serverName": "claude.ai Pandadoc"
+    },
+    {
+      "serverName": "claude.ai Pipedream (Twenty, Jina)"
+    },
+    {
+      "serverName": "claude.ai Redbark"
+    },
+    {
+      "serverName": "claude.ai Security Trails"
+    },
+    {
+      "serverName": "claude.ai Slack"
+    },
+    {
+      "serverName": "claude.ai Supabase"
+    },
+    {
+      "serverName": "claude.ai Supermetrics"
+    },
+    {
+      "serverName": "claude.ai Twenty"
+    },
+    {
+      "serverName": "claude.ai Xero"
+    }
+  ],
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ~/.claude/hooks/herdr-agent-state.sh session",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [],
+    "PostToolUse": []
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "bash ~/.claude/statusline.sh",
+    "padding": 0
+  },
+  "enabledPlugins": {
+    "mattpocock-skills@mattpocock": true,
+    "figma@claude-plugins-official": true,
+    "s7pient@evolution7": true
+  },
+  "extraKnownMarketplaces": {
+    "mattpocock": {
+      "source": {
+        "source": "github",
+        "repo": "mattpocock/skills"
+      },
+      "autoUpdate": true
+    },
+    "claude-plugins-official": {
+      "source": {
+        "source": "github",
+        "repo": "anthropics/claude-plugins-official"
+      }
+    },
+    "evolution7": {
+      "source": {
+        "source": "github",
+        "repo": "evolution7/s7pient"
+      }
+    }
+  },
+  "feedbackDrafts": "off",
+  "tui": "fullscreen",
+  "voice": {
+    "enabled": true,
+    "mode": "hold"
+  },
+  "autoMemoryEnabled": false,
+  "skipWorkflowUsageWarning": true,
+  "theme": "dark",
+  "editorMode": "normal",
+  "voiceEnabled": true,
+  "permissions": {
+    "deny": [
+      "Skill(mattpocock-skills:pr)",
+      "Skill(mattpocock-skills:pr *)",
+      "Skill(mattpocock-skills:code-review)",
+      "Skill(mattpocock-skills:code-review *)"
+    ]
+  }
+}
