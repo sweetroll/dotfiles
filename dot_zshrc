@@ -1,3 +1,11 @@
+# ASCII BOAT SHELL INTEGRATION START boat
+case ":$PATH:" in
+  *":/Users/swtrll/.ascii/bin:"*) ;;
+  *) PATH="/Users/swtrll/.ascii/bin:$PATH" ;;
+esac
+export PATH
+# ASCII BOAT SHELL INTEGRATION END boat
+
 if [[ -f "/opt/homebrew/bin/brew" ]] then
   # Init Homebrew if available
   eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -66,6 +74,8 @@ alias pn='ddev pnpm'
 alias l='ddev launch'
 alias la='ddev launch admin'
 alias dbi='ddev import-db --file'
+alias nan="$HOME/.nancy/box/bin/nancy-box claude"
+alias addy="$HOME/.nancy/box/bin/nancy-box claude --stack addy"
 
 # Shell integrations
 eval "$(fzf --zsh)"
@@ -79,8 +89,57 @@ export NVM_DIR="$HOME/.nvm"
   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
-# Vite+ bin (https://viteplus.dev)
-[ -f "$HOME/.vite-plus/env" ] && . "$HOME/.vite-plus/env"
 
 # Personal scripts
 export PATH="$HOME/.local/bin:$PATH"
+
+# pnpm
+export PNPM_HOME='/Users/swtrll/Library/pnpm'
+case ":$PATH:" in
+  ":$PNPM_HOME/bin:"*) ;;
+  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
+esac
+# pnpm end
+
+# Homebrew curl (keg-only)
+export PATH="/opt/homebrew/opt/curl/bin:$PATH"
+export SSL_CERT_FILE=/opt/homebrew/etc/ca-certificates/cert.pem
+export CURL_CA_BUNDLE=/opt/homebrew/etc/ca-certificates/cert.pem
+
+export PLAYWRITER_TOKEN="$(cat ~/.nancy/.box/run/playwriter-token 2>/dev/null)"
+export PLAYWRITER_HOST=127.0.0.1
+
+# ASCII BOAT SHELL INTEGRATION START boat
+boat() {
+  current_file=$(mktemp)
+  convo_file=$(mktemp)
+  old_current_file=${BOAT_CURRENT_ID_FILE-}
+  old_convo_file=${BOAT_CURRENT_CONVO_FILE-}
+  export BOAT_CURRENT_ID_FILE="$current_file"
+  export BOAT_CURRENT_CONVO_FILE="$convo_file"
+  command "/Users/swtrll/.ascii/bin/boat" "$@"
+  boat_status=$?
+  if [ "$boat_status" -eq 0 ]; then
+    case "${1:-}" in
+      new|start|fork)
+        if [ -s "$current_file" ]; then
+          current_id=$(tr -d '[:space:]' < "$current_file")
+          if [ -n "$current_id" ]; then export BOAT_CURRENT_ID="$current_id"; fi
+        fi
+        ;;
+    esac
+    case "${1:-}" in
+      prompt)
+        if [ -s "$convo_file" ]; then
+          IFS= read -r current_convo < "$convo_file" || current_convo=""
+          if [ -n "$current_convo" ]; then export BOAT_CURRENT_CONVO="$current_convo"; fi
+        fi
+        ;;
+    esac
+  fi
+  if [ -n "$old_current_file" ]; then export BOAT_CURRENT_ID_FILE="$old_current_file"; else unset BOAT_CURRENT_ID_FILE; fi
+  if [ -n "$old_convo_file" ]; then export BOAT_CURRENT_CONVO_FILE="$old_convo_file"; else unset BOAT_CURRENT_CONVO_FILE; fi
+  rm -f "$current_file" "$convo_file"
+  return "$boat_status"
+}
+# ASCII BOAT SHELL INTEGRATION END boat

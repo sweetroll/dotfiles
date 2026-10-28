@@ -1,6 +1,12 @@
 
-# Vite+ bin (https://viteplus.dev)
-[ -f "$HOME/.vite-plus/env" ] && . "$HOME/.vite-plus/env"
 
 # Local secrets (not in chezmoi)
 [ -f "$HOME/.config/secrets.zsh" ] && . "$HOME/.config/secrets.zsh"
+
+# ASCII BOAT SHELL INTEGRATION START boat
+case ":$PATH:" in
+  *":/Users/swtrll/.ascii/bin:"*) ;;
+  *) PATH="/Users/swtrll/.ascii/bin:$PATH" ;;
+esac
+export PATH
+# ASCII BOAT SHELL INTEGRATION END boat
